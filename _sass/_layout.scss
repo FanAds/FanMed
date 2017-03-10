@@ -189,6 +189,10 @@
         width:         calc(#{$content-width} - (#{$spacing-unit} * 12));
         text-align: left;
         margin-bottom: $spacing-unit;
+        @include media-query($on-palm) {
+            width: 90%;
+            display: block;
+        }
         a.post-link {
             font-size: 24px;
             font-weight: 600;
@@ -314,6 +318,13 @@
         margin-right: 10px;
         height: 200px;
         box-shadow: 0 1px 7px rgba(0,0,0,.05);
+        @include media-query($on-palm) {
+            width: 100%;
+            display: block;
+            margin-bottom: 60px;
+            margin-right: auto;
+            margin-left: auto;
+        }
         .hero {
             border-top-left-radius: 4px;
             border-top-right-radius: 4px;
