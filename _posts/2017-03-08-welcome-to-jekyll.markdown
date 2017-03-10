@@ -4,7 +4,7 @@ title:  "Welcome to Jekyll!"
 date:   2017-03-08 20:37:11 +0530
 categories: jekyll update
 cover: http://static.fanadnetwork.com/0c54dfc781258a9c46f0e6b82208a6da.jpg
-author: saleem
+author: Saleem
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

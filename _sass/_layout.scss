@@ -201,7 +201,13 @@
             }
         }
         .post-meta {
-            font-size: 12px;
+            .author {
+                color: #333;
+                font-size: 14px;
+            }
+            time {
+                font-size: 12px;
+            }
         }
         .cover {
             margin-bottom: 15px;

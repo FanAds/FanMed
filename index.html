@@ -8,7 +8,7 @@ layout: default
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div class="post-meta">{% if post.author %}<div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><div itemprop="name">{{ post.author }}</div></div>{% endif %}<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></div>
         {% if post.cover.size > 0 %}
           <div class="cover" style="{% if post.cover.size > 0 %}background-image: url({{post.cover}}){% endif %}">
             
