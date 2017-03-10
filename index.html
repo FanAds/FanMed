@@ -9,11 +9,21 @@ layout: default
     {% for post in site.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        {% if post.cover.size > 0 %}
+          <div class="cover" style="{% if post.cover.size > 0 %}background-image: url({{post.cover}}){% endif %}">
+            
+          </div>
+        {% endif %}
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-        <div class="cover">
-          
+        <div class="details">
+          <div class="excerpt">
+            {{ post.excerpt | truncatewords:30}}
+          </div>
+          <div class="read-more">
+            <a href="{{ post.url | prepend: site.baseurl }}">Read more..</a>
+          </div>
         </div>
       </li>
     {% endfor %}    
@@ -32,8 +42,6 @@ layout: default
       </li>
     {% endfor %}
   </ul> -->
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
 </div>
