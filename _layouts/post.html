@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
+<div class="post-wrapper">
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
+  	<div class="post-meta">{% if page.author %}<div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><div itemprop="name">{{ page.author }}</div></div>{% endif %}<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></div>
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
@@ -13,3 +14,46 @@ layout: default
   </div>
 
 </article>
+</div>
+<div class="recents-wrapper">
+	<div class="recent-items">
+		{% for post in site.posts %}
+			{% if post.url != page.url %}
+				<div class="item">
+					<div class="hero" style="{% if post.cover.size > 0 %}background-image: url({{post.cover}}){% endif %}">
+					</div>
+					<div class="details">
+						<div class="title">
+							<a href="{{ post.url | prepend: site.baseurl }}"><h2>{{post.title}}</h2></a>
+						</div>
+						<div class="author">
+							{{post.author}}
+						</div>
+					</div>
+				</div>	
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+<script type="text/javascript">
+
+	// function setImage() {
+	// 	var recentImages = document.querySelectorAll(".hero img");
+	// 	if(recentImages.length > 0) {
+	// 		recentImages.forEach(function (image) {
+	// 			function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight) {
+
+	// 				var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+
+	// 				return { width: srcWidth*ratio, height: srcHeight*ratio };
+	// 			}
+	// 			var newDimensions = calculateAspectRatioFit(image.clientWidth, image.clientHeight, 315, 100);
+	// 			image.width = newDimensions.width;
+	// 			image.height = newDimensions.height;
+	// 		})
+	// 	}
+	// }
+
+	// window.onload = setImage;
+
+</script>
