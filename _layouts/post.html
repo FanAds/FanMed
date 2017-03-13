@@ -24,7 +24,7 @@ layout: default
 					</div>
 					<div class="details">
 						<div class="title">
-							<a href="{{ post.url | prepend: site.baseurl }}"><h2>{{post.title}}</h2></a>
+							<a href="{{ post.url | prepend: site.baseurl }}"><h2>{{post.title | truncateletters}}</h2></a>
 						</div>
 						<div class="author">
 							{{post.author}}
