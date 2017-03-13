@@ -17,21 +17,19 @@ layout: default
 </div>
 <div class="recents-wrapper">
 	<div class="recent-items">
-		{% for post in site.posts limit: 3 %}
-			{% if post.url != page.url %}
-				<div class="item">
-					<div class="hero" style="{% if post.cover.size > 0 %}background-image: url({{post.cover}}){% endif %}">
+		{% for post in site.posts %}
+			<div class="item">
+				<div class="hero" style="{% if post.cover.size > 0 %}background-image: url({{post.cover}}){% endif %}">
+				</div>
+				<div class="details">
+					<div class="title">
+						<a href="{{ post.url | prepend: site.baseurl }}"><h2>{{post.title}}</h2></a>
 					</div>
-					<div class="details">
-						<div class="title">
-							<a href="{{ post.url | prepend: site.baseurl }}"><h2>{{post.title | truncateletters}}</h2></a>
-						</div>
-						<div class="author">
-							{{post.author}}
-						</div>
+					<div class="author">
+						{{post.author}}
 					</div>
-				</div>	
-			{% endif %}
+				</div>
+			</div>
 		{% endfor %}
 	</div>
 </div>
