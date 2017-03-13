@@ -3,7 +3,7 @@
  */
 .site-header {
     border-bottom: 1px solid $grey-color-light;
-    min-height: 65px;
+    height: 63px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -12,11 +12,13 @@
 .site-title {
     font-size: 26px;
     font-weight: 300;
-    line-height: 65px;
+    line-height: 60px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
-
+    img {
+        height: 60px;
+    }
     &,
     &:visited {
         color: $grey-color-dark;
