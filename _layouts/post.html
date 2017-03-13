@@ -17,7 +17,7 @@ layout: default
 </div>
 <div class="recents-wrapper">
 	<div class="recent-items">
-		{% for post in site.posts %}
+		{% for post in site.posts limit: 3 %}
 			{% if post.url != page.url %}
 				<div class="item">
 					<div class="hero" style="{% if post.cover.size > 0 %}background-image: url({{post.cover}}){% endif %}">
