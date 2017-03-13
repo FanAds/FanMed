@@ -1,8 +1,8 @@
 module Jekyll
   module TruncateLettersFilter
     def truncateletters(input)
-      if input.length > 70
-      	return input[0..70] + "..."
+      if input.length > 35
+      	return input[0..35] + "..."
       else
       	return input
       end
