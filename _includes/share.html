@@ -1,0 +1,7 @@
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="{{ "/img/Facebook.png" | prepend: site.baseurl }}"></a></li>
+
+  <li><a href="https://twitter.com/intent/tweet?hashtags={{ page.tags | join: ',' | remove: ' ' }}&amp;text={{ page.title | escape | replace:' ','%20' }}&amp;url={{ site.url }}{{ page.url }}{% if author.twitter %}&amp;via={{ author.twitter }}{% endif %}" target="_blank" title="Tweet"><img alt="Tweet" src="{{ "/img/Twitter.png" | prepend: site.baseurl }}"></a></li>
+
+  <li><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="{{ "/img/Google+.png" | prepend: site.baseurl}}"></a></li>
+</ul>
