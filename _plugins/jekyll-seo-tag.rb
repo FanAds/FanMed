@@ -1,4 +1,4 @@
-require "jekyll-seo-tag/version"
+require_relative "jekyll-seo-tag/version"
 
 module Jekyll
   class SeoTag < Liquid::Tag
