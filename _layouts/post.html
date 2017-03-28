@@ -14,6 +14,7 @@ layout: default
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
+  <div id="advertisement-after-post"></div>
 
 </article>
 </div>
@@ -21,8 +22,10 @@ layout: default
 	<div class="recent-items">
 		{% for post in site.posts limit:3 %}
 			<div class="item">
-				<div class="hero" style="{% if post.cover.size > 0 %}background-image: url({{post.cover}}){% endif %}">
+				<div class="hero">
+					{% if post.cover.size > 0 %}<img class="freeze" src="{{post.cover}}"/>{% endif %}
 				</div>
+
 				<div class="details">
 					<div class="title">
 						<a href="{{ post.url | prepend: site.baseurl }}"><h2>{{post.title | truncateletters}}</h2></a>
