@@ -1,0 +1,54 @@
+#subscribe
+{
+	width: 100%;
+	margin: 0px auto;	
+	overflow: auto;
+}
+.subscribe
+{
+	margin: 0px auto;
+	padding: 30px;
+	width: 400px;
+	background: #f3f3f3;
+    text-align:center;
+}
+.subscribe h5{
+	font-weight: 400;
+	font-size: 17px;
+}
+.subscribe .email
+{
+	font-size: 15px;
+    border: 1px solid #ABB0B2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #343434;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0px 0.4em;
+    display: block;
+    margin: 0;
+    width: 100%;
+    vertical-align: top;
+}
+
+.subscribe .btn
+{
+	font-size: 13px;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    letter-spacing: .03em;
+    color: #fff;
+    background-color: #aaa;
+    box-sizing: border-box;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 18px;
+    display: block;
+    margin: 10px auto;
+    transition: all 0.23s ease-in-out 0s;
+}

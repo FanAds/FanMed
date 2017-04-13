@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <script type="text/javascript" src="{{ "/js/subscribe.js" | prepend: site.baseurl }}"></script>
+
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
   {% if page.tags %}<meta name="tags" content="{{ page.tags }}">{% endif %}
   {% if page.categories %}<meta name="categories" content="{{ page.categories }}">{% endif %}
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
