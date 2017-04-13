@@ -15,13 +15,11 @@ layout: default
     {{ content }}
   </div>
     <div id="subscribe">
-      <div class="subscribe">
+      <div class="subscribe" id="subscribeContainer">
         <center><h5>Subscribe to our mailing list</h5></center>
         <div class="subscribeForm">
-        <form action="">
-          <input type="email" placeholder="Email Address" class="email" />
-          <input type="submit" value="Subscribe" class="btn" />  
-        </form>
+          <input type="email" placeholder="Email Address" class="email" id="subscribeEmail"/>
+          <input type="submit" value="Subscribe" class="btn" onclick="subscribe()" />  
         </div>
         
       </div>
