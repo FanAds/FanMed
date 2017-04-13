@@ -4,7 +4,7 @@ function subscribe() {
     document.getElementById("subscribeEmail").style.borderColor = "#ABB0B2";
     var pageId = document.head.querySelector("meta[property='fanads:page_id']").content
 
-    if (emailPattern.test(email)) {
+    if (emailPattern.test(email) && (pageId != null && pageId != undefined)) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
