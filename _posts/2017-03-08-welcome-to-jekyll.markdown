@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2017-03-08 20:37:11 +0530
-categories: Nature
+category: Nature
 cover: http://static.fanadnetwork.com/0c54dfc781258a9c46f0e6b82208a6da.jpg
 author: Saleem
 categories: Nature
