@@ -11,9 +11,9 @@ module Jekyll
 			path = "search"
 
 			site.posts.docs.each do |post|
-				item = { "url": post.url, "title": post.data['title'] }
-				if post.data.has_key? 'cover' and not post.data['cover'].empty?
-					item["cover"] = post.data['cover']
+				item = { :url => site.config['url'] + post.url, :title => post.data['title'], :date => post.data['date'].to_i }
+				if post.data.has_key? 'cover' and not post.data['category'].nil? and not post.data['cover'].empty?
+					item[:cover] = post.data['cover']
 				end
 				category = post.data['category']
 				if category_index.has_key?(category)
@@ -22,6 +22,10 @@ module Jekyll
 					category_index[category] = Array.new
 					category_index[category] << item
 				end
+			end
+
+			category_index.each do |key, value|
+				value.sort_by { |hsh| hsh[:date] }
 			end
 
 			FileUtils.mkpath(path) unless File.exists?(path)

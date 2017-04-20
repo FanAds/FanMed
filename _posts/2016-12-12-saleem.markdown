@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2017-03-08 20:37:11 +0530
+title:  "Welcome to Jekyllsadasd!"
+date:   2017-02-08 20:37:11 +0530
 category: jekyll
 cover: http://static.fanadnetwork.com/bcbb9fee88fee992dee1dccecc17be62.png
 author: Saleem
