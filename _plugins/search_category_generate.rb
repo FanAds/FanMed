@@ -17,11 +17,11 @@ module Jekyll
 				regex = /[#{special.gsub(/./){|char| "\\#{char}"}}]/
 				
 				item = { :url => site.config['url'] + post.url, :title => post.data['title'], :date => post.data['date'].to_i }
+				if post.data.has_key? 'cover' and not post.data['cover'].nil? and not post.data['cover'].empty?
+					item[:cover] = post.data['cover']
+				end
 				if not post.data['category'].nil? and not post.data['category'].empty? and not post.data['category'] =~ regex
 					category = post.data['category']
-					if post.data.has_key? 'cover' and not post.data['cover'].nil? and not post.data['cover'].empty?
-						item[:cover] = post.data['cover']
-					end
 
 					if category_index.has_key?(category)
 						category_index[category] << item
