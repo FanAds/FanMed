@@ -3,7 +3,8 @@ module Jekyll
 	class SearchCategoryGenerator < Generator
 		safe true
     	priority :low
-		
+		UNCATEGORIZED = 'Uncategorized'
+
 		def generate(site)
 			dir = 'search'
 			file_name = 'category_index.json'
@@ -14,10 +15,10 @@ module Jekyll
 
 				special = "?<>',?[]}{=-)(*&^%$#`~{}"
 				regex = /[#{special.gsub(/./){|char| "\\#{char}"}}]/
-		
+				
+				item = { :url => site.config['url'] + post.url, :title => post.data['title'], :date => post.data['date'].to_i }
 				if not post.data['category'].nil? and not post.data['category'].empty? and not post.data['category'] =~ regex
 					category = post.data['category']
-					item = { :url => site.config['url'] + post.url, :title => post.data['title'], :date => post.data['date'].to_i }
 					if post.data.has_key? 'cover' and not post.data['cover'].nil? and not post.data['cover'].empty?
 						item[:cover] = post.data['cover']
 					end
@@ -28,9 +29,15 @@ module Jekyll
 						category_index[category] = Array.new
 						category_index[category] << item
 					end
+				else
+					if category_index.has_key?(UNCATEGORIZED)
+						category_index[UNCATEGORIZED] << item
+					else
+						category_index[UNCATEGORIZED] = Array.new
+						category_index[UNCATEGORIZED] << item
+					end
 				end
-			end
-
+			end	
 			category_index.each do |key, value|
 				value.sort_by { |hsh| hsh[:date] }
 			end
