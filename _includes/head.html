@@ -2,6 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{% if site.fb_page_id %}}<meta property="fb:pages" content="{{site.fb_page_id}}"/>{{% endif %}}
   <meta property="fanads:page_id" content="{{page.page_id}}">
   <meta property="fanads:article_id" content="{{page.article_id}}">
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
