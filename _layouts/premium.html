@@ -1,0 +1,59 @@
+---
+layout: premium
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <div class="page-content">
+      <div class="post-wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+          <header class="post-header">
+            <div class="post-meta">{% if page.author %}<div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><div itemprop="name">{{ page.author }}</div></div>{% endif %}<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></div>
+            
+            <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+            {% if site.share == true %}{% include share.html %}{% endif %}
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            {{ content }}
+          </div>
+            <div id="subscribe">
+              <div class="subscribe" id="subscribeContainer">
+                <center><h5>Subscribe to our mailing list</h5></center>
+                <div class="subscribeForm">
+                  <input type="email" placeholder="Email Address" class="email" id="subscribeEmail"/>
+                  <input type="submit" value="Subscribe" class="btn" onclick="subscribe()" />  
+                </div>
+                
+              </div>
+            </div>
+          
+          <div id="advertisement-after-post"></div>
+
+        </article>
+      </div>
+      <div class="recents-wrapper">
+        <div class="recent-items">
+          {% for post in site.posts limit:3 %}
+            <div class="item">
+              <div class="hero" style="{% if post.cover.size > 0 %}background-image: url({{post.cover}}){% endif %}">
+              </div>
+              <div class="details">
+                <div class="title">
+                  <a href="{{ post.url | prepend: site.baseurl }}"><h2>{{post.title | truncateletters}}</h2></a>
+                </div>
+                <div class="author">
+                  {{post.author}}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+  </body>
+</html>
