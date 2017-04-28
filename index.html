@@ -15,14 +15,22 @@ layout: default
           </div>
         {% endif %}
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          {% if post.premium and (post.premium == true or post.premium == 'true') %}
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: '/premium' }}">{{ post.title }}</a>
+          {% else %}
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{post.title}} </a>
+          {% endif %}
         </h2>
         <div class="details">
           <div class="excerpt">
             {{ post.excerpt | truncatewords:30}}
           </div>
           <div class="read-more">
-            <a href="{{ post.url | prepend: site.baseurl }}">Read more..</a>
+            {% if post.premium and (post.premium == true or post.premium == 'true') %}
+              <a href="{{ post.url | prepend: site.baseurl | prepend: '/premium' }}">Read more..</a>
+            {% else %}
+              <a href="{{ post.url | prepend: site.baseurl }}">Read more..</a>
+            {% endif %}
           </div>
         </div>
       </li>
